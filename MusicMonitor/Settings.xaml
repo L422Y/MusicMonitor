@@ -1,0 +1,30 @@
+﻿<Window x:Class="MusicMonitor.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:cp="clr-namespace:DropDownCustomColorPicker;assembly=CustomColorPicker"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Properties="clr-namespace:MusicMonitor.Properties" Title="MusicMonitor Settings" Height="348" Width="372" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid Margin="0,33,0,13">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89.272"/>
+            <ColumnDefinition Width="13.804"/>
+            <ColumnDefinition Width="71"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Folder(s) to watch" Height="28" HorizontalAlignment="Left" Margin="10,-26,0,0" Name="label1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="104" />
+        <Label Content="Show notifications" Height="28" HorizontalAlignment="Left" Margin="26,118,0,0" Name="label2" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="107" />
+        <CheckBox Height="23" HorizontalAlignment="Left" Margin="13,125,0,0" Name="showNotifications" VerticalAlignment="Top" Width="15" IsChecked="{Binding Source={x:Static Properties:Settings.Default}, Path=ShowNotifications}" />
+        <Button Content="OK" Height="23" HorizontalAlignment="Right" Margin="0,0,12,10" Name="button1" VerticalAlignment="Bottom" Width="44" Grid.Column="3" Click="button1_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="12,0,0,10" Name="button2" VerticalAlignment="Bottom" Width="59" Click="button2_Click" />
+        <Button Content="Browse..." Grid.Column="3" Height="23" HorizontalAlignment="Right" Margin="0,-25,12,0" Name="button3" VerticalAlignment="Top" Width="75" Click="BrowseButton" />
+        <Label Content="Window Background" Height="28" HorizontalAlignment="Left" Margin="26,118,0,0" Name="label3" VerticalAlignment="Top" Grid.Column="3" Width="120" />
+        <Label Content="Folder Background" Height="28" HorizontalAlignment="Left" Margin="27,142,0,0" Name="label4" VerticalAlignment="Top" Grid.Column="3" Width="110" />
+        <cp:CustomColorPicker Grid.Column="3" HorizontalAlignment="Left" Name="WindowBGSelect" Width="32" Margin="153,121,0,91" />
+        <cp:CustomColorPicker Grid.Column="3" Height="20" HorizontalAlignment="Left" Name="FolderBGSelect" VerticalAlignment="Top" Width="32" Margin="153,146,0,0" />
+        <Label Content="Folder Header BG" Height="28" HorizontalAlignment="Left" Margin="27,167,0,0" Name="label5" VerticalAlignment="Top" Grid.Column="3" Width="103" />
+        <cp:CustomColorPicker Height="20" HorizontalAlignment="Left" Margin="154,171,0,0" Name="FolderHeaderBGSelect" VerticalAlignment="Top" Width="32" Grid.Column="3" />
+        <Label Content="Show Artwork" Height="28" HorizontalAlignment="Left" Margin="25,141,0,0" Name="label6" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="84" />
+        <CheckBox Height="20" HorizontalAlignment="Left" IsChecked="{Binding Source={x:Static Properties:Settings.Default}, Path=GetAlbumArt}" Margin="13,147,0,0" Name="GetAlbumArtCb" VerticalAlignment="Top" Width="15" />
+        <ListBox Height="72" HorizontalAlignment="Left" Margin="12,7,0,0" Name="listBox1" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="4" IsManipulationEnabled="True" />
+        <Button Grid.Column="3" Content="Delete" HorizontalAlignment="Left" Margin="111,84,0,0" VerticalAlignment="Top" Click="Button_Click" Width="75" Height="20"/>
+    </Grid>
+</Window>
